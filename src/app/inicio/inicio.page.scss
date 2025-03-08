@@ -1,141 +1,212 @@
-/***********************************
- * Fondo y tipografía
- **********************************/
- ion-content {
-    --background: #3d2555; /* Morado */
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: Arial, sans-serif;
-  }
-  
-  /***********************************
-   * Contenedor principal
-   **********************************/
-  .inicio-container {
-    max-width: 400px;
-    width: 90%;
-    margin: 20px auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  /***********************************
-   * Logo
-   **********************************/
-  .logo-img {
-    max-width: 150px;
-    margin-bottom: 20px;
-  }
-  
-  /***********************************
-   * Tarjeta de usuario
-   **********************************/
-  .user-card {
-    width: 100%;
-    background: rgba(255, 255, 255, 0.09);
-    border: 1px solid #2bdaab;
-    color: white;
-    margin-bottom: 20px;
-    border-radius: 12px; /* esquinas suaves */
-  
-    ion-card-header,
-    ion-card-content {
-      text-align: center;
+/* Variables de color */
+$primary: #662D91;       // Morado característico
+$light-primary: #F2E8FF;   // Tono claro complementario
+$text-color: #333;       // Color para textos
+
+/* Reset y Configuración General */
+* {
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+  font-family: Helvetica, Arial, sans-serif !important;
+}
+
+/* Forzar fondo blanco y centrar contenido en ion-content */
+ion-content {
+  --background: #fff !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+}
+
+:host {
+  width: 100%;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background-color: #fff !important;
+  text-align: center !important;
+  padding: 20px; /* Opcional para dar algo de espacio interno */
+
+  /* Logo */
+  .logo {
+    font-size: 32px !important;
+    font-weight: bold !important;
+    color: $primary !important;
+    margin-bottom: 10px !important;
+    
+    img {
+      max-width: 300px !important;
+      width: 100%;
+      height: auto;
     }
   }
-  
-  .saldo-disponible {
-    margin-top: 10px;
-    font-size: 1rem;
+
+  /* Contenedor del QR */
+  .qr-container {
+    position: relative !important;
+    width: 220px !important;
+    height: 220px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    border-radius: 12px !important;
+    margin: 0 auto; /* Centrado horizontal */
   }
-  
-  /***********************************
-   * Botones de acción
-   **********************************/
-  .action-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 15px;
-  
-    ion-button {
-      --border-radius: 20px;
-      --color: #000;       /* Texto negro en el botón */
-      --background: #2bdaab;
-      font-weight: 600;
-      font-size: 1rem;
-  
-      &[fill="outline"] {
-        --background: transparent;
-        --border-color: #2bdaab;
-        --color: #2bdaab;
+
+  /* Imagen QR */
+  .qr-code {
+    width: 200px !important;
+    height: 200px !important;
+    border-radius: 10px !important;
+    border: 2px solid $primary !important;
+    margin: 0 auto; /* Centrado horizontal */
+  }
+
+  /* Bordes de las esquinas (detalles decorativos) */
+  .corner {
+    position: absolute !important;
+    width: 35px !important;
+    height: 35px !important;
+    
+    &::before,
+    &::after {
+      content: "" !important;
+      position: absolute !important;
+      background-color: $primary !important;
+    }
+
+    /* Esquina superior izquierda */
+    &.top-left::before {
+      width: 20px !important;
+      height: 5px !important;
+      top: 0 !important;
+      left: 0 !important;
+    }
+    &.top-left::after {
+      width: 5px !important;
+      height: 20px !important;
+      top: 0 !important;
+      left: 0 !important;
+    }
+
+    /* Esquina superior derecha */
+    &.top-right::before {
+      width: 20px !important;
+      height: 5px !important;
+      top: 0 !important;
+      right: 0 !important;
+    }
+    &.top-right::after {
+      width: 5px !important;
+      height: 20px !important;
+      top: 0 !important;
+      right: 0 !important;
+    }
+
+    /* Esquina inferior izquierda */
+    &.bottom-left::before {
+      width: 20px !important;
+      height: 5px !important;
+      bottom: 0 !important;
+      left: 0 !important;
+    }
+    &.bottom-left::after {
+      width: 5px !important;
+      height: 20px !important;
+      bottom: 0 !important;
+      left: 0 !important;
+    }
+
+    /* Esquina inferior derecha */
+    &.bottom-right::before {
+      width: 20px !important;
+      height: 5px !important;
+      bottom: 0 !important;
+      right: 0 !important;
+    }
+    &.bottom-right::after {
+      width: 5px !important;
+      height: 20px !important;
+      bottom: 0 !important;
+      right: 0 !important;
+    }
+  }
+
+  /* Texto del Número de Cuenta */
+  .account-text {
+    font-size: 14px !important;
+    color: $text-color !important;
+    margin-top: 10px !important;
+  }
+
+  .account-number {
+    font-size: 18px !important;
+    font-weight: bold !important;
+    margin-top: 5px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 5px !important;
+
+    i {
+      cursor: pointer !important;
+      color: $text-color !important;
+      transition: transform 0.2s ease;
+      
+      &:hover {
+        transform: scale(1.1);
       }
     }
   }
-  
-  /***********************************
-   * Movimientos
-   **********************************/
-  .movimientos-list {
-    width: 100%;
+
+  /* Contenedor de botones de acción */
+  .buttons {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 30px !important;
+    margin-top: 20px !important;
   }
-  
-  ion-list-header {
-    background: transparent;
-    color: #2bdaab;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-  
-  ion-item {
-    --background: rgba(255, 255, 255, 0.08);
-    border: 1px solid #2bdaab;
-    margin: 5px 0;
-    border-radius: 6px;
-  }
-  
-  .positive {
-    color: #2bdaab;
-  }
-  
-  .negative {
-    color: #ff6666;
-  }
-  
-  /***********************************
-   * Footer
-   **********************************/
-  .footer-toolbar {
-    --background: #3d2555; /* Mismo fondo */
-  
-    ion-grid {
-      padding: 0;
+
+  .button {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    font-size: 14px !important;
+    color: $primary !important;
+
+    i {
+      font-size: 24px !important;
+      background: $light-primary !important;
+      padding: 15px !important;
+      border-radius: 10px !important;
+      transition: background 0.2s ease;
+      
+      &:hover {
+        background: lighten($light-primary, 5%) !important;
+      }
     }
   }
-  
-  /* Iconos y texto centrados en el footer */
-  .footer-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #2bdaab;
-    cursor: pointer;
-  
-    ion-icon {
-      font-size: 24px;
-      margin-bottom: 4px;
-    }
-  
-    span {
-      font-size: 0.85rem;
-      font-weight: 500;
-    }
-  
-    &:active {
-      transform: scale(0.95);
+
+  /* Botón de Ingreso */
+  .login-btn {
+    background-color: $primary !important;
+    color: #fff !important;
+    padding: 15px !important;
+    border-radius: 30px !important;
+    font-size: 18px !important;
+    width: 80% !important;
+    margin-top: 30px !important;
+    cursor: pointer !important;
+    text-align: center !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+    transition: background 0.2s ease;
+    
+    &:hover {
+      background-color: darken($primary, 5%) !important;
     }
   }
-  
+}
