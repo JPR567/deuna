@@ -1,0 +1,92 @@
+<ion-header>
+    <ion-toolbar color="dark">
+      <ion-title>Inicio</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <!-- Contenedor principal -->
+    <div class="inicio-container">
+      <!-- Logo -->
+      <img src="assets/icon/icon-deuna.png" alt="Logo DeUna" class="logo-img" />
+  
+      <!-- Tarjeta con datos del usuario y saldo -->
+      <ion-card class="user-card">
+        <ion-card-header>
+          <ion-card-subtitle>Bienvenido(a)</ion-card-subtitle>
+          <ion-card-title>Juan Pérez</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <div class="saldo-disponible">
+            Saldo disponible: <strong>$1,500.00</strong>
+          </div>
+  
+          <!-- Botones de acción -->
+          <div class="action-buttons">
+            <ion-button expand="block" (click)="transferir()">Transferir</ion-button>
+            <ion-button expand="block" fill="outline" (click)="pagarQR()">Pagar a QR</ion-button>
+          </div>
+        </ion-card-content>
+      </ion-card>
+  
+      <!-- Movimientos recientes -->
+      <ion-list class="movimientos-list">
+        <ion-list-header>
+          <ion-label>Movimientos Recientes</ion-label>
+        </ion-list-header>
+  
+        <ion-item>
+          <ion-label>
+            <h2>Depósito</h2>
+            <p>2025-03-08</p>
+          </ion-label>
+          <ion-note slot="end" class="positive">$ +300.00</ion-note>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label>
+            <h2>Retiro Cajero</h2>
+            <p>2025-03-07</p>
+          </ion-label>
+          <ion-note slot="end" class="negative">$ -50.00</ion-note>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label>
+            <h2>Transferencia</h2>
+            <p>2025-03-06</p>
+          </ion-label>
+          <ion-note slot="end" class="negative">$ -100.00</ion-note>
+        </ion-item>
+      </ion-list>
+    </div>
+  </ion-content>
+  
+  <!-- Footer con opciones de navegación -->
+  <ion-footer class="footer-toolbar">
+    <ion-toolbar>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <div class="footer-item" (click)="goTo('inicio')">
+              <ion-icon name="home"></ion-icon>
+              <span>Inicio</span>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div class="footer-item" (click)="goTo('promos')">
+              <ion-icon name="pricetags"></ion-icon>
+              <span>Promos</span>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div class="footer-item" (click)="goTo('billetera')">
+              <ion-icon name="wallet"></ion-icon>
+              <span>Billetera</span>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-toolbar>
+  </ion-footer>
+  

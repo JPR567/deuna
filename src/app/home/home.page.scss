@@ -1,0 +1,101 @@
+/* Elimina estilos globales de body y reseteos, 
+   y ponlos en .ion-page o en ion-content, por ejemplo: */
+
+   ion-content {
+    --background: #3d2555; /* Color de fondo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    color: white;
+  }
+  
+  /* Container para el formulario */
+  .signUp-Container {
+    max-width: 400px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  /* Input con icono */
+  .input-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+  
+    input {
+      width: 100%;
+      padding: 10px 40px; /* espacio para el icono */
+      border: none;
+      color: white;
+      border-bottom: 2px solid #2bdaab;
+      background: transparent;
+      outline: none;
+      font-size: 16px;
+  
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.426);
+      }
+    }
+  
+    i {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #2bdaab;
+      font-size: 18px;
+    }
+  }
+  
+  /* Logo */
+  .logo-img {
+    max-width: 150px;
+    max-height: 150px;
+    margin-bottom: 20px;
+  }
+  
+  .log-in {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Botones */
+  .button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  
+    .logIn-btn {
+      padding: 10px 25px;
+      border-radius: 30px;
+      border: none;
+      font-size: 1rem;
+      background-color: #2bdaab;
+      color: #ddd;
+      transition: 0.1s ease;
+  
+      &:active {
+        background-color: #088261;
+      }
+    }
+  
+    a {
+      color: #2bdaab;
+      text-decoration: none;
+      transition: 0.1s ease;
+  
+      &:active {
+        text-decoration: underline;
+      }
+    }
+  }
+  

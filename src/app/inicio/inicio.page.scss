@@ -1,0 +1,141 @@
+/***********************************
+ * Fondo y tipografía
+ **********************************/
+ ion-content {
+    --background: #3d2555; /* Morado */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  /***********************************
+   * Contenedor principal
+   **********************************/
+  .inicio-container {
+    max-width: 400px;
+    width: 90%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /***********************************
+   * Logo
+   **********************************/
+  .logo-img {
+    max-width: 150px;
+    margin-bottom: 20px;
+  }
+  
+  /***********************************
+   * Tarjeta de usuario
+   **********************************/
+  .user-card {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.09);
+    border: 1px solid #2bdaab;
+    color: white;
+    margin-bottom: 20px;
+    border-radius: 12px; /* esquinas suaves */
+  
+    ion-card-header,
+    ion-card-content {
+      text-align: center;
+    }
+  }
+  
+  .saldo-disponible {
+    margin-top: 10px;
+    font-size: 1rem;
+  }
+  
+  /***********************************
+   * Botones de acción
+   **********************************/
+  .action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+  
+    ion-button {
+      --border-radius: 20px;
+      --color: #000;       /* Texto negro en el botón */
+      --background: #2bdaab;
+      font-weight: 600;
+      font-size: 1rem;
+  
+      &[fill="outline"] {
+        --background: transparent;
+        --border-color: #2bdaab;
+        --color: #2bdaab;
+      }
+    }
+  }
+  
+  /***********************************
+   * Movimientos
+   **********************************/
+  .movimientos-list {
+    width: 100%;
+  }
+  
+  ion-list-header {
+    background: transparent;
+    color: #2bdaab;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  ion-item {
+    --background: rgba(255, 255, 255, 0.08);
+    border: 1px solid #2bdaab;
+    margin: 5px 0;
+    border-radius: 6px;
+  }
+  
+  .positive {
+    color: #2bdaab;
+  }
+  
+  .negative {
+    color: #ff6666;
+  }
+  
+  /***********************************
+   * Footer
+   **********************************/
+  .footer-toolbar {
+    --background: #3d2555; /* Mismo fondo */
+  
+    ion-grid {
+      padding: 0;
+    }
+  }
+  
+  /* Iconos y texto centrados en el footer */
+  .footer-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #2bdaab;
+    cursor: pointer;
+  
+    ion-icon {
+      font-size: 24px;
+      margin-bottom: 4px;
+    }
+  
+    span {
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+  
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+  
